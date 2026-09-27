@@ -1,1 +1,491 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>RobotLearn | Robotics course</title><link rel="stylesheet" href="css/style.css"></head><body><nav class="navbar"><div class="container nav-container"><a class="logo" href="index.html">🤖 Robot<span>Learn</span></a><button class="menu-toggle" aria-label="Open navigation">☰</button><ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="curriculum.html">Curriculum</a></li><li><a href="instructor.html">Instructor</a></li><li><a href="applications.html">Applications</a></li><li><a href="quiz.html">Quiz</a></li><li><a href="dashboard.html">Dashboard</a></li><li><a href="contact.html">Contact</a></li></ul><div class="nav-actions"><div class="search"><input id="siteSearch" aria-label="Search lessons" placeholder="Search"><div id="searchResults" class="search-results hidden"></div></div><button class="theme-toggle" aria-label="Toggle dark mode">◐</button><a class="btn btn-primary" href="enroll.html">Start Learning</a></div></div></nav><main><section class="hero"><div class="container hero-grid"><div><span class="eyebrow">Robotics foundations · 12 modules</span><h1>Master Robotics Architecture & Build Real-World Systems</h1><p>Learn how robots sense, think, move, communicate, and solve real-world problems.</p><div class="hero-actions"><a class="btn btn-accent" href="enroll.html">Start Learning</a><a class="btn btn-outline" style="color:#fff;border-color:#fff" href="curriculum.html">Explore Curriculum</a><a class="btn btn-outline" style="color:#fff;border-color:#fff" href="quiz.html">Take Free Quiz</a></div><div class="hero-stats"><div class="stat"><b>12+</b><span>Modules</span></div><div class="stat"><b>8+ hrs</b><span>Content</span></div><div class="stat"><b>Beginner</b><span>Friendly</span></div><div class="stat"><b>Certificate</b><span>Included</span></div><div class="stat"><b>50+</b><span>Topics</span></div></div></div><div class="robot-orb">🤖</div></div></section><section class="section"><div class="container"><div class="section-head"><h2>Understand the full robotics stack</h2><p class="muted">Robotics combines computer science, AI, electronics, mechanics, control systems, sensors, and embedded systems.</p></div><div class="process"><div>Sense</div><div>Process</div><div>Decide</div><div>Act</div><div>Feedback</div></div></div></section><section class="section alt"><div class="container"><div class="section-head"><h2>What you will learn</h2></div><div class="grid" id="topics"></div></div></section><section class="section"><div class="container split"><div><h2>Robot architecture, clearly explained</h2><p class="muted">Follow data from physical sensing to intelligent action, with every layer designed to support the next.</p><a class="btn btn-primary" href="curriculum.html?lesson=Perception%20layer">Explore a lesson</a></div><div class="architecture"><div class="layer"><b>Perception</b><span>Ultrasonic, IR, camera, LiDAR, IMU</span></div><div class="layer"><b>Processing & decision</b><span>ESP32, Raspberry Pi, algorithms, AI, planning</span></div><div class="layer"><b>Control & actuation</b><span>PID, DC motors, servos, steppers, arms</span></div></div></div></section><section class="section alt"><div class="container"><div class="section-head"><h2>Frequently asked questions</h2></div><div class="faq" id="faq"></div></div></section></main><footer class="footer"><div class="container footer-grid"><div><h3>🤖 RobotLearn</h3><p>Making robotics education accessible and practical for everyone.</p></div><div><h4>Course</h4><ul><li><a href="curriculum.html">Curriculum</a></li><li><a href="applications.html">Applications</a></li><li><a href="quiz.html">Quiz</a></li></ul></div><div><h4>Resources</h4><ul><li><a href="dashboard.html">Dashboard</a></li><li><a href="certificate.html">Certificate</a></li><li><a href="contact.html">Contact</a></li></ul></div></div><div class="container footer-bottom">© 2026 RobotLearn. All rights reserved.</div></footer><script src="js/script.js"></script><script>const T=['Robot Architecture','Sensors','Actuators','Microcontrollers','Embedded Systems','Communication','Control Systems','Kinematics','Artificial Intelligence','Computer Vision','Autonomous Navigation','Robot Safety'];topics.innerHTML=T.map((x,i)=>`<article class="card"><div class="icon">${['🏗️','📡','⚙️','🧠'][i%4]}</div><h3>${x}</h3><p>Build a practical understanding of ${x.toLowerCase()} in robot systems.</p><a class="btn btn-outline small" href="curriculum.html?lesson=${encodeURIComponent(x)}">Learn more</a></article>`).join('');faq.innerHTML=['Is this course beginner friendly?','Do I need programming knowledge?','Do I need a robotics kit?','What languages are used?','Can I learn using Arduino?','Can I use ESP8266?','What is PID control?','What is a sensor?','What is an actuator?','Will I receive a certificate?'].map((x,i)=>`<details><summary>${x}</summary><p class="muted">${i===9?'Yes, after completing all lessons.':'You can start with the lessons now; hands-on practice is optional but encouraged.'}</p></details>`).join('')</script></body></html>
+
+<!DOCTYPE html>
+<html
+
+<head>
+    
+
+    <title>RobotLearn | Robotics Course</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+
+            <a class="logo" href="index.html">
+                🤖 Robot<span>Learn</span>
+            </a>
+
+            <button class="menu-toggle" aria-label="Open navigation">
+                ☰
+            </button>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="curriculum.html">Curriculum</a></li>
+                <li><a href="instructor.html">Instructor</a></li>
+                <li><a href="applications.html">Applications</a></li>
+                <li><a href="quiz.html">Quiz</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+
+                <div class="search">
+                    <input
+                        id="siteSearch"
+                        aria-label="Search lessons"
+                        placeholder="Search"
+                    >
+
+                    <div
+                        id="searchResults"
+                        class="search-results hidden">
+                    </div>
+                </div>
+
+                <button
+                    class="theme-toggle"
+                    aria-label="Toggle dark mode">
+                    ◐
+                </button>
+
+                <a class="btn btn-primary" href="enroll.html">
+                    Start Learning
+                </a>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <main>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-grid">
+
+                <div>
+
+                    <span class="eyebrow">
+                        Robotics foundations · 12 modules
+                    </span>
+
+                    <h1>
+                        Master Robotics Architecture &amp;
+                        Build Real-World Systems
+                    </h1>
+
+                    <p>
+                        Learn how robots sense, think, move,
+                        communicate, and solve real-world problems.
+                    </p>
+
+                    <div class="hero-actions">
+
+                        <a class="btn btn-accent" href="enroll.html">
+                            Start Learning
+                        </a>
+
+                        <a
+                            class="btn btn-outline"
+                            style="color: #fff; border-color: #fff;"
+                            href="curriculum.html">
+                            Explore Curriculum
+                        </a>
+
+                        <a
+                            class="btn btn-outline"
+                            style="color: #fff; border-color: #fff;"
+                            href="quiz.html">
+                            Take Free Quiz
+                        </a>
+
+                    </div>
+
+
+                    <div class="hero-stats">
+
+                        <div class="stat">
+                            <b>12+</b>
+                            <span>Modules</span>
+                        </div>
+
+                        <div class="stat">
+                            <b>8+ hrs</b>
+                            <span>Content</span>
+                        </div>
+
+                        <div class="stat">
+                            <b>Beginner</b>
+                            <span>Friendly</span>
+                        </div>
+
+                        <div class="stat">
+                            <b>Certificate</b>
+                            <span>Included</span>
+                        </div>
+
+                        <div class="stat">
+                            <b>50+</b>
+                            <span>Topics</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="robot-orb">
+                    🤖
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Robotics Process -->
+        <section class="section">
+
+            <div class="container">
+
+                <div class="section-head">
+
+                    <h2>
+                        Understand the Full Robotics Stack
+                    </h2>
+
+                    <p class="muted">
+                        Robotics combines computer science, AI,
+                        electronics, mechanics, control systems,
+                        sensors, and embedded systems.
+                    </p>
+
+                </div>
+
+
+                <div class="process">
+
+                    <div>Sense</div>
+                    <div>Process</div>
+                    <div>Decide</div>
+                    <div>Act</div>
+                    <div>Feedback</div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Topics -->
+        <section class="section alt">
+
+            <div class="container">
+
+                <div class="section-head">
+
+                    <h2>
+                        What You Will Learn
+                    </h2>
+
+                </div>
+
+                <div class="grid" id="topics"></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Architecture -->
+        <section class="section">
+
+            <div class="container split">
+
+                <div>
+
+                    <h2>
+                        Robot Architecture,
+                        Clearly Explained
+                    </h2>
+
+                    <p class="muted">
+                        Follow data from physical sensing to
+                        intelligent action, with every layer
+                        designed to support the next.
+                    </p>
+
+                    <a
+                        class="btn btn-primary"
+                        href="curriculum.html?lesson=Perception%20layer">
+                        Explore a Lesson
+                    </a>
+
+                </div>
+
+
+                <div class="architecture">
+
+                    <div class="layer">
+
+                        <b>Perception</b>
+
+                        <span>
+                            Ultrasonic, IR, camera, LiDAR, IMU
+                        </span>
+
+                    </div>
+
+
+                    <div class="layer">
+
+                        <b>Processing &amp; Decision</b>
+
+                        <span>
+                            ESP32, Raspberry Pi, algorithms,
+                            AI, planning
+                        </span>
+
+                    </div>
+
+
+                    <div class="layer">
+
+                        <b>Control &amp; Actuation</b>
+
+                        <span>
+                            PID, DC motors, servos,
+                            steppers, arms
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FAQ -->
+        <section class="section alt">
+
+            <div class="container">
+
+                <div class="section-head">
+
+                    <h2>
+                        Frequently Asked Questions
+                    </h2>
+
+                </div>
+
+                <div class="faq" id="faq"></div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <div class="container footer-grid">
+
+            <div>
+
+                <h3>
+                    🤖 RobotLearn
+                </h3>
+
+                <p>
+                    Making robotics education accessible
+                    and practical for everyone.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h4>Course</h4>
+
+                <ul>
+                    <li>
+                        <a href="curriculum.html">
+                            Curriculum
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="applications.html">
+                            Applications
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="quiz.html">
+                            Quiz
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <h4>Resources</h4>
+
+                <ul>
+                    <li>
+                        <a href="dashboard.html">
+                            Dashboard
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="certificate.html">
+                            Certificate
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html">
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="container footer-bottom">
+
+            © 2026 RobotLearn. All rights reserved.
+
+        </div>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+
+    <script>
+
+        /* Course Topics */
+
+        const topics = [
+            "Robot Architecture",
+            "Sensors",
+            "Actuators",
+            "Microcontrollers",
+            "Embedded Systems",
+            "Communication",
+            "Control Systems",
+            "Kinematics",
+            "Artificial Intelligence",
+            "Computer Vision",
+            "Autonomous Navigation",
+            "Robot Safety"
+        ];
+
+
+        const topicIcons = [
+            "🏗️",
+            "📡",
+            "⚙️",
+            "🧠"
+        ];
+
+
+        document.getElementById("topics").innerHTML =
+            topics.map((topic, index) => {
+
+                return `
+                    <article class="card">
+
+                        <div class="icon">
+                            ${topicIcons[index % topicIcons.length]}
+                        </div>
+
+                        <h3>
+                            ${topic}
+                        </h3>
+
+                        <p>
+                            Build a practical understanding of
+                            ${topic.toLowerCase()}
+                            in robot systems.
+                        </p>
+
+                        <a
+                            class="btn btn-outline small"
+                            href="curriculum.html?lesson=${encodeURIComponent(topic)}">
+                            Learn More
+                        </a>
+
+                    </article>
+                `;
+
+            }).join("");
+
+
+        /* Frequently Asked Questions */
+
+        const faqQuestions = [
+            "Is this course beginner friendly?",
+            "Do I need programming knowledge?",
+            "Do I need a robotics kit?",
+            "What languages are used?",
+            "Can I learn using Arduino?",
+            "Can I use ESP8266?",
+            "What is PID control?",
+            "What is a sensor?",
+            "What is an actuator?",
+            "Will I receive a certificate?"
+        ];
+
+
+        document.getElementById("faq").innerHTML =
+            faqQuestions.map((question, index) => {
+
+                const answer =
+                    index === 9
+                        ? "Yes, after completing all lessons."
+                        : "You can start with the lessons now; hands-on practice is optional but encouraged.";
+
+                return `
+                    <details>
+
+                        <summary>
+                            ${question}
+                        </summary>
+
+                        <p class="muted">
+                            ${answer}
+                        </p>
+
+                    </details>
+                `;
+
+            }).join("");
+
+    </script>
+
+</body>
+
+</html>
+```
